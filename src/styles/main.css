@@ -41,6 +41,12 @@ a {
 	color: #ffcc00;
 }
 
+.error-load-text {
+	text-align: center;
+	height: 60vh;
+	width: 100%;
+}
+
 /** SKIP LINK */
 
 .skip-link {

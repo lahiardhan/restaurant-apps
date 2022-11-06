@@ -1,9 +1,9 @@
 /* eslint-disable no-underscore-dangle */
 const DrawerInitiator = {
   init({ menuButton, closeMenu, drawer }) {
-    const navHome = document.getElementsByClassName('nav__link')[0];
-    const navFavorite = document.getElementsByClassName('nav__link')[1];
-    const navAbout = document.getElementsByClassName('nav__link')[2];
+    const navHome = document.getElementsByClassName('nav__item')[0];
+    const navFavorite = document.getElementsByClassName('nav__item')[1];
+    const navAbout = document.getElementsByClassName('nav__item')[2];
 
     function drawerToggle(element, method) {
       element.addEventListener('click', (event) => {
