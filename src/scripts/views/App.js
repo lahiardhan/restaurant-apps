@@ -21,7 +21,6 @@ class App {
       menuButton: this._menuButton,
       closeMenu: this._closeMenu,
       drawer: this._drawer,
-      // hero: this._hero,
     });
   }
 
