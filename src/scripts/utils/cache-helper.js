@@ -1,6 +1,6 @@
+/* eslint-disable no-underscore-dangle */
 import CONFIG from '../global/config';
 
-/* eslint-disable no-underscore-dangle */
 const CacheHelper = {
   async cachingAppShell(requests) {
     const cache = await this._openCache();

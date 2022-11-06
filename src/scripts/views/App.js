@@ -5,12 +5,11 @@ import DrawerInitiator from '../utils/drawer-initiator';
 /* eslint-disable no-underscore-dangle */
 class App {
   constructor({
-    menuButton, closeMenu, drawer, hero, content,
+    menuButton, closeMenu, drawer, content,
   }) {
     this._menuButton = menuButton;
     this._closeMenu = closeMenu;
     this._drawer = drawer;
-    this._hero = hero;
     this._content = content;
 
     this._initialAppShell();
