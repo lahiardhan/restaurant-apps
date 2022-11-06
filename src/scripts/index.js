@@ -8,7 +8,7 @@ const app = new App({
   menuButton: document.querySelector('.header__menu'),
   closeMenu: document.querySelector('.close__menu'),
   drawer: document.querySelector('#nav'),
-  content: document.querySelector('#main'),
+  content: document.querySelector('#root'),
 });
 
 window.addEventListener('hashchange', () => {

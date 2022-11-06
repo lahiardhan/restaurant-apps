@@ -14,7 +14,7 @@ const LikeButtonInitiator = {
     const { id } = this._restaurant;
 
     if (await this._isRestaurantExist(id)) {
-      this._renderLiked();
+      this._renderLiked(id);
     } else {
       this._renderLike();
     }
@@ -35,12 +35,12 @@ const LikeButtonInitiator = {
     });
   },
 
-  _renderLiked() {
+  _renderLiked(id) {
     this._likeButtonContainer.innerHTML = createLikedButtonTemplate();
 
     const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {
-      await FavoriteRestaurantIdb.deleteRestaurant(this._restaurant.id);
+      await FavoriteRestaurantIdb.deleteRestaurant(id);
       this._renderButton();
     });
   },

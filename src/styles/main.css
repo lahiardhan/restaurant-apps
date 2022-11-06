@@ -262,6 +262,10 @@ section {
 
 /** DETAIL RESTO  */
 
+#root {
+	padding-top: 65px;
+}
+
 .restaurant {
 	width: 100%;
 }
@@ -403,14 +407,13 @@ section {
   width: 55px;
   height: 55px;
   display: flex;
-	display: block;
+	z-index: 99;
   align-items: center;
   justify-content: center;
   background-color: var(--decoration-color);
   
   position: fixed;
-	z-index: 99;
-  bottom: 16px;
+  bottom: 36px;
   right: 16px;
   border-radius: 50%;
   border: 0;
