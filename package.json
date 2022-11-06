@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start-dev": "webpack-dev-server --config webpack.dev.js",
+    "dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "test": "karma start",
-    "serve": "http-server dist --port 9000"
+    "serve": "http-server dist --port 9000",
+    "build-serve": "npm run build && npm run serve"
   },
   "keywords": [],
   "author": "Lahia Ardhan <lahia.ardhan@gmail.com>",
@@ -40,6 +41,7 @@
     "workbox-webpack-plugin": "^6.5.4"
   },
   "dependencies": {
+    "idb": "^7.1.1",
     "regenerator-runtime": "^0.13.9",
     "workbox-window": "^6.5.4"
   }

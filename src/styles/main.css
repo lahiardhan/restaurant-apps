@@ -397,6 +397,29 @@ section {
 	font-weight: 600;
 }
 
+/** LIKE BUTTON  */
+
+.like {
+  width: 55px;
+  height: 55px;
+  display: flex;
+	display: block;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--decoration-color);
+  
+  position: fixed;
+	z-index: 99;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+  
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+
 /** FOOTER  */
 
 footer {
