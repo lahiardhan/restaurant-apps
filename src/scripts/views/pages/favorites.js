@@ -2,7 +2,7 @@ import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
 import { createRestaurantItemTemplate } from '../templates/template-creator';
 
 const Favorites = {
-  async  render() {
+  async render() {
     return `
       <div class="hero">
         <div class="hero__inner">

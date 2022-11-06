@@ -43,21 +43,28 @@
    .nav a {
       padding: 10px 0;
    }
-	 section {
-		 margin-bottom: 80px;
-	 }
-	 
-	 .list-restoran__label {
-		 font-size: 26px;
-	 }
-	 
-	 .list-restoran {
-		 grid-template-columns: 1fr 1fr;
-	 }
-	 
-	 .restoran-item__name {
-		 font-size: 22px;
-	 }
+}
+
+@media screen and (min-width: 500px) {
+	#nav {
+		font-size: 18px;
+	}
+
+	section {
+		margin-bottom: 80px;
+	}
+
+	.list-restoran__label {
+		font-size: 26px;
+	}
+
+	.list-restoran {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.restoran-item__name {
+		font-size: 22px;
+	}
 }
 
 @media screen and (min-width: 648px) {
