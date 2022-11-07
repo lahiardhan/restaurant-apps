@@ -1,6 +1,7 @@
 import routes from '../routes/routes';
 import UrlParser from '../routes/url-parser';
 import DrawerInitiator from '../utils/drawer-initiator';
+import Loader from '../utils/loader';
 
 /* eslint-disable no-underscore-dangle */
 class App {
@@ -24,6 +25,7 @@ class App {
   }
 
   async renderPage() {
+    Loader.hideLoading();
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url];
     this._content.innerHTML = await page.render();

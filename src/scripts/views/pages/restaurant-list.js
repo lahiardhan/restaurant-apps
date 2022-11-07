@@ -1,4 +1,5 @@
 import RestaurantSource from '../../data/restaurant-sources';
+import Loader from '../../utils/loader';
 import { createRestaurantItemTemplate } from '../templates/template-creator';
 
 const RestaurantList = {
@@ -45,6 +46,7 @@ const RestaurantList = {
   },
 
   async afterRender() {
+    Loader.hideLoading();
     const restaurants = await RestaurantSource.restaurantList();
     const restaurantsContainer = document.querySelector('.list-restoran');
 

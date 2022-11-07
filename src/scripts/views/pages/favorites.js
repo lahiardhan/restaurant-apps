@@ -1,4 +1,5 @@
 import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
+import Loader from '../../utils/loader';
 import { createRestaurantItemTemplate } from '../templates/template-creator';
 
 const Favorites = {
@@ -17,6 +18,7 @@ const Favorites = {
   },
 
   async afterRender() {
+    Loader.hideLoading();
     const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
     const restaurantsContainer = document.querySelector('.list-restoran');
 
