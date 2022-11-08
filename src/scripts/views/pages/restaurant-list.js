@@ -14,7 +14,7 @@ const RestaurantList = {
         </div>
       </div>
 
-      <main id="main">
+      <main id="main" tabindex="0">
         <section class="content">
           <h2 class="list-restoran__label">
             Explore Restaurant

@@ -7,7 +7,7 @@ import { createRestaurantDetailTemplate } from '../templates/template-creator';
 const Detail = {
   async  render() {
     return `
-      <main id="main">
+      <main id="main" tabindex="0">
         <div id="restaurant" class="restaurant"></div>
         <div id="likeButtonContainer"></div>
       </main>

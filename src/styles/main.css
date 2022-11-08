@@ -451,7 +451,6 @@ section {
   width: 55px;
   height: 55px;
   display: flex;
-	z-index: 99;
   align-items: center;
   justify-content: center;
   background-color: var(--decoration-color);
