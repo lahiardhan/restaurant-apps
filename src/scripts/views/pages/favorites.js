@@ -20,7 +20,16 @@ const Favorites = {
   async afterRender() {
     Loader.hideLoading();
     const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
+    const mainContainer = document.querySelector('#main');
     const restaurantsContainer = document.querySelector('.list-restoran');
+
+    if (!restaurants.length) {
+      mainContainer.innerHTML += `
+        <div class="error-load-text">
+          <p>No favorite restaurant list</p>
+        </div>
+      `;
+    }
 
     restaurants.forEach((restaurant) => {
       restaurantsContainer.innerHTML += createRestaurantItemTemplate(restaurant);
