@@ -18,7 +18,7 @@ const Favorites = {
   },
 
   async afterRender() {
-    Loader.hideLoading();
+    await Loader.hideLoading();
     const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
     const mainContainer = document.querySelector('#main');
     const restaurantsContainer = document.querySelector('.list-restoran');

@@ -15,7 +15,7 @@ const Detail = {
   },
 
   async afterRender() {
-    Loader.hideLoading();
+    await Loader.hideLoading();
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurant = await RestaurantSource.restaurantDetail(url.id);
     const restaurantContainer = document.querySelector('#restaurant');

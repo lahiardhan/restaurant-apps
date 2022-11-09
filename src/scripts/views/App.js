@@ -25,7 +25,7 @@ class App {
   }
 
   async renderPage() {
-    Loader.hideLoading();
+    await Loader.hideLoading();
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url];
     this._content.innerHTML = await page.render();

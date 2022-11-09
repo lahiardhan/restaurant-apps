@@ -46,7 +46,7 @@ const RestaurantList = {
   },
 
   async afterRender() {
-    Loader.hideLoading();
+    await Loader.hideLoading();
     const restaurants = await RestaurantSource.restaurantList();
     const restaurantsContainer = document.querySelector('.list-restoran');
 
