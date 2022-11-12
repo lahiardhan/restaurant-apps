@@ -36,6 +36,38 @@ Scenario('liking one restaurant', async ({ I }) => {
   assert.strictEqual(firstRestaurantName, likedRestaurantName);
 });
 
+Scenario('unlike one restaurants', async ({ I }) => {
+  I.see('Tidak ada resto untuk ditampilkan', '.restaurant-item__not__found');
+
+  I.amOnPage('/');
+
+  I.seeElement('.restaurant-item__name');
+
+  const firstRestaurant = locate('.restaurant-item__name').first();
+  const firstRestaurantName = await I.grabTextFrom(firstRestaurant);
+  I.click(firstRestaurant);
+
+  I.seeElement('#likeButton');
+  I.click('#likeButton');
+
+  I.amOnPage('/#/favorites');
+  I.seeElement('.restaurant-item');
+
+  const likedRestaurantName = await I.grabTextFrom('.restaurant-item__name');
+  assert.strictEqual(firstRestaurantName, likedRestaurantName);
+
+  I.seeElement('.restaurant-item__name');
+
+  const firstRestaurantLiked = locate('.restaurant-item__name').first();
+  I.click(firstRestaurantLiked);
+
+  I.seeElement('#likeButton');
+  I.click('#likeButton');
+
+  I.amOnPage('/#/favorites');
+  I.see('Tidak ada resto untuk ditampilkan', '.restaurant-item__not__found');
+});
+
 Scenario('searching restaurants', async ({ I }) => {
   I.see('Tidak ada resto untuk ditampilkan', '.restaurant-item__not__found');
 

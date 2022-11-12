@@ -12,7 +12,7 @@
     "e2e": "codeceptjs run"
   },
   "keywords": [],
-  "author": "Lahia Ardhan <lahia.ardhan@gmail.com>",
+  "author": "Lahia Ardhan <lahia.ardhanm@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.18.5",
