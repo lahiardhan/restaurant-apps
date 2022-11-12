@@ -1,10 +1,13 @@
-import FavoriteRestaurantIdb from '../data/favorite-restaurant-idb';
-import { createLikeButtonTemplate, createLikedButtonTemplate } from '../views/templates/template-creator';
-
 /* eslint-disable no-underscore-dangle */
-const LikeButtonInitiator = {
-  async init({ likeButtonContainer, restaurant }) {
+import {
+  createLikeButtonTemplate,
+  createUnlikeButtonTemplate,
+} from '../views/templates/template-creator';
+
+const LikeButtonPresenter = {
+  async init({ likeButtonContainer, favoriteRestaurants, restaurant }) {
     this._likeButtonContainer = likeButtonContainer;
+    this._favoriteRestaurants = favoriteRestaurants;
     this._restaurant = restaurant;
 
     await this._renderButton();
@@ -14,14 +17,14 @@ const LikeButtonInitiator = {
     const { id } = this._restaurant;
 
     if (await this._isRestaurantExist(id)) {
-      this._renderLiked(id);
+      this._renderLiked();
     } else {
       this._renderLike();
     }
   },
 
   async _isRestaurantExist(id) {
-    const restaurant = await FavoriteRestaurantIdb.getRestaurant(id);
+    const restaurant = await this._favoriteRestaurants.getRestaurant(id);
     return !!restaurant;
   },
 
@@ -30,20 +33,20 @@ const LikeButtonInitiator = {
 
     const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {
-      await FavoriteRestaurantIdb.putRestaurant(this._restaurant);
+      await this._favoriteRestaurants.putRestaurant(this._restaurant);
       this._renderButton();
     });
   },
 
-  _renderLiked(id) {
-    this._likeButtonContainer.innerHTML = createLikedButtonTemplate();
+  _renderLiked() {
+    this._likeButtonContainer.innerHTML = createUnlikeButtonTemplate();
 
     const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {
-      await FavoriteRestaurantIdb.deleteRestaurant(id);
+      await this._favoriteRestaurants.deleteRestaurant(this._restaurant.id);
       this._renderButton();
     });
   },
 };
 
-export default LikeButtonInitiator;
+export default LikeButtonPresenter;

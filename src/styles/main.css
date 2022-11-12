@@ -73,7 +73,8 @@ a {
 	color: #ffcc00;
 }
 
-.error-load-text {
+.error-load-text,
+.restaurant-item__not__found {
 	position: absolute;
 	left: 0;
 	top: 50%;
@@ -217,13 +218,13 @@ section {
 	margin-bottom: 40px;
 }
 
-.list-restoran__label {
+.list-restaurant__label {
 	margin: auto;
 	width: max-content;
 	font-size: 22px;
 }
 
-.list-restoran__label hr {
+.list-restaurant__label hr {
 	margin-top: 0;
 	width: 25%;
 	border-bottom: 1px solid var(--decoration-color);
@@ -231,7 +232,7 @@ section {
 
 /** RESTO LIST */
 
-.list-restoran {
+.list-restaurant {
 	margin: 32px auto auto;
 	text-align: left;
 	display: grid;
@@ -240,7 +241,7 @@ section {
 
 /** RESTO ITEM */
 
-.restoran-item {
+.restaurant-item {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 	width: 100%;
 	border-radius: 5px;
@@ -251,54 +252,54 @@ section {
 	cursor: pointer;
 }
 
-.restoran-item:hover {
+.restaurant-item:hover {
 	top: -4px;
 	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.restoran-item__content {
+.restaurant-item__content {
 	padding: 16px;
 }
 
-.restoran-item__thumbnail {
+.restaurant-item__thumbnail {
 	width: 100%;
 	height: 65%;
 	transition: transform ease 0.4s;
 }
 
-.restoran-item__thumbnail:hover {
+.restaurant-item__thumbnail:hover {
 	transform: scale(1.1);
 }
 
-.restoran-item__city {
+.restaurant-item__city {
 	font-size: 14px;
 	text-transform: uppercase;
 	color: #999;
 }
 
-.restoran-item__rating {
+.restaurant-item__rating {
 	color: var(--decoration-color);
 	font-weight: 600;
 	text-decoration: none;
 }
 
-.restoran-item__name {
+.restaurant-item__name {
 	font-weight: 700;
 	font-size: 18px;
 	margin-top: 16px;
 	transition: 0.3s opacity;
 }
 
-.restoran-item__name:hover {
+.restaurant-item__name:hover {
 	opacity: 0.5;
 }
 
-.restoran-item__name {
+.restaurant-item__name {
 	text-decoration: none;
 	color: var(--primary-background);
 }
 
-.restoran-item__description {
+.restaurant-item__description {
 	margin-top: 16px;
 	font-size: 12px;
 	line-height: 1.5em;

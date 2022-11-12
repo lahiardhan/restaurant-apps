@@ -16,11 +16,11 @@ const RestaurantList = {
 
       <main id="main" tabindex="0">
         <section class="content">
-          <h2 class="list-restoran__label">
+          <h2 class="list-restaurant__label">
             Explore Restaurant
             <hr>
           </h2>
-          <div class="list-restoran"></div>
+          <div class="list-restaurant"></div>
         </section>
 
         <section class="other">
@@ -48,7 +48,7 @@ const RestaurantList = {
   async afterRender() {
     await Loader.hideLoading();
     const restaurants = await RestaurantSource.restaurantList();
-    const restaurantsContainer = document.querySelector('.list-restoran');
+    const restaurantsContainer = document.querySelector('.list-restaurant');
 
     restaurants.forEach((restaurant) => {
       restaurantsContainer.innerHTML += createRestaurantItemTemplate(restaurant);
