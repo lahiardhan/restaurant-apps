@@ -55,7 +55,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
 
 const createRestaurantItemTemplate = (restaurant) => `
   <article class="restaurant-item">
-    <a class="restaurant" href="/#/detail/${restaurant.id}">
+    <a href="/#/detail/${restaurant.id}">
       <img class="restaurant-item__thumbnail" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name || '-'}">
       <div class="restaurant-item__content">
         <p class="restaurant-item__city">${restaurant.city} | <span class="restaurant-item__rating" aria-label="rating restaurant ${restaurant.rating || 'NaN'}"><i class="fa fa-star font-yellow"></i>${restaurant.rating}</span>

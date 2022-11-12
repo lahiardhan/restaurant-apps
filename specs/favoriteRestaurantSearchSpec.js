@@ -50,7 +50,7 @@ describe('Searching restaurants', () => {
     it('should show the restaurants found by Favorite Restaurants', (done) => {
       document.getElementById('restaurants')
         .addEventListener('restaurants:updated', () => {
-          expect(document.querySelectorAll('.restaurant').length).toEqual(3);
+          expect(document.querySelectorAll('.restaurant-item').length).toEqual(3);
           done();
         });
 
