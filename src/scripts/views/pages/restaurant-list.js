@@ -1,11 +1,10 @@
 import RestaurantSource from '../../data/restaurant-sources';
-import Loader from '../../utils/loader';
 import { createRestaurantItemTemplate } from '../templates/template-creator';
 
 const RestaurantList = {
   async render() {
     return `
-      <div class="hero">
+      <div class="hero lazyload">
         <div class="hero__inner">
           <h2 class="hero__title">The place where you can find Sundanese Food.</h2>
           <p class="hero__tagline">
@@ -26,9 +25,8 @@ const RestaurantList = {
         <section class="other">
           <article class="jobs-item">
             <picture>
-              <source class="jobs-item__thumbnail" media="(max-width: 600px)" srcset="/images/hero-image_4.webp" type="image/webp">
-              <source class="jobs-item__thumbnail" media="(max-width: 600px)" srcset="/images/hero-image_4-small.jpg" type="image/jpeg">
-              <img class="jobs-item__thumbnail lazyload" src="/images/hero-image_4-large.jpg" alt="">
+              <source class="jobs-item__thumbnail lazyload" media="(max-width: 600px)" srcset="/images/sharp/hero-image_4-small.jpg" type="image/jpeg">
+              <img class="jobs-item__thumbnail lazyload" src="/images/sharp/hero-image_4-large.jpg" alt="">
             </picture>
             <div class="jobs-item__content">
               <h3 class="jobs-item__name">Join our team</h3>
@@ -50,7 +48,6 @@ const RestaurantList = {
   },
 
   async afterRender() {
-    await Loader.hideLoading();
     const restaurants = await RestaurantSource.restaurantList();
     const restaurantsContainer = document.querySelector('.list-restaurant');
 

@@ -2,7 +2,6 @@ import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
 import RestaurantSource from '../../data/restaurant-sources';
 import UrlParser from '../../routes/url-parser';
 import LikeButtonPresenter from '../../utils/like-button-presenter';
-import Loader from '../../utils/loader';
 import { createRestaurantDetailTemplate } from '../templates/template-creator';
 
 const Detail = {
@@ -16,7 +15,6 @@ const Detail = {
   },
 
   async afterRender() {
-    await Loader.hideLoading();
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurant = await RestaurantSource.restaurantDetail(url.id);
     const restaurantContainer = document.querySelector('#restaurant');

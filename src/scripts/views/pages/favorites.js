@@ -1,9 +1,8 @@
 /* eslint-disable no-new */
 import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
-import Loader from '../../utils/loader';
+import FavoriteRestaurantSearchPresenter from './liked-restaurants/favorite-restaurant-search-presenter';
 import FavoriteRestaurantSearchView from './liked-restaurants/favorite-restaurant-search-view';
 import FavoriteRestaurantShowPresenter from './liked-restaurants/favorite-restaurant-show-presenter';
-import FavoriteRestaurantSearchPresenter from './liked-restaurants/favorite-restaurant-search-presenter';
 
 const view = new FavoriteRestaurantSearchView();
 
@@ -13,7 +12,6 @@ const Favorites = {
   },
 
   async afterRender() {
-    await Loader.hideLoading();
     new FavoriteRestaurantShowPresenter({ view, favoriteRestaurants: FavoriteRestaurantIdb });
     new FavoriteRestaurantSearchPresenter({ favoriteRestaurants: FavoriteRestaurantIdb, view });
   },

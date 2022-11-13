@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js && npm run build-image",
-    "test": "karma start",
+    "prod": "npm run build-image && npm run build",
+    "build": "webpack --config webpack.prod.js",
     "serve": "http-server dist --port 9000",
-    "build-serve": "npm run build && npm run serve",
+    "test": "karma start",
     "e2e": "codeceptjs run",
-    "build-image": "node sharp.js"
+    "build-image": "node sharp.js",
+    "build-sharp": "npm run prod && npm run serve"
   },
   "keywords": [],
   "author": "Lahia Ardhan <lahia.ardhanm@gmail.com>",

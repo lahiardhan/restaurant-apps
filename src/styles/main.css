@@ -182,7 +182,7 @@ footer a:hover {
 	background-size: cover;
 	background-position: center;
 	background-blend-mode: multiply;
-	background-image: url("../public/images/heros/hero-image_2.jpg");
+	background-image: url("../public/images/sharp/hero-image_2-large.jpg");
 }
 
 .hero__inner {
@@ -435,10 +435,20 @@ section {
 }
 
 .info-item__thumbnail {
-	background-image: url("../public/images/heros/hero-image_5.jpg");
+	background-image: url("../public/images/sharp/hero-image_5-large.jpg");
 	background-position: center;
 	background-size: cover;
 	height: 250px;
+}
+
+@media screen and (max-width: 600px) {
+	.hero {
+		background-image: url("../public/images/sharp/hero-image_2-small.jpg");
+	}
+
+	.info-item__thumbnail {
+		background-image: url("../public/images/sharp/hero-image_5-small.jpg");
+	}
 }
 
 .info-item__more {
