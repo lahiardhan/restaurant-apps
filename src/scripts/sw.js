@@ -1,3 +1,7 @@
+/* eslint-disable no-console */
+/* eslint-disable no-restricted-globals */
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable import/no-extraneous-dependencies */
 import { precacheAndRoute } from 'workbox-precaching';
 
 // Do precaching

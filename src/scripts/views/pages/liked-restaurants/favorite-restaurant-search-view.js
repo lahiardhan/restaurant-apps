@@ -11,7 +11,12 @@ class FavoriteRestaurantSearchView {
           Favorites Restaurants
           <hr>
         </h2>
-        <input id="query" type="text">
+        <div class="webflow-style-input">
+          <input id="query" type="text" placeholder="Search Restaurant Name ...">
+          <button type="submit">
+            <i class="fa fa-arrow-right"></i>
+          </button>
+        </div>
         <div id="restaurants" class="list-restaurant">
         </div>
       </section>

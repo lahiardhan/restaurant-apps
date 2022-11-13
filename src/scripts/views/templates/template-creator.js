@@ -11,7 +11,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
         `).join('')}
       </p>
       <p class="restaurant-detail__location font-secondary">${restaurant.address}, ${restaurant.city}</p>
-      <img class="restaurant-detail__thumbnail lazyload" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}" />
+      <img class="restaurant-detail__thumbnail lazyload" data-src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}" />
       <p class="restaurant-detail__description">${restaurant.description}</p>
     </div>
     
@@ -56,7 +56,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
 const createRestaurantItemTemplate = (restaurant) => `
   <article class="restaurant-item">
     <a href="/#/detail/${restaurant.id}">
-      <img class="restaurant-item__thumbnail lazyload" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name || '-'}">
+      <img class="restaurant-item__thumbnail lazyload" data-src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name || '-'}">
       <div class="restaurant-item__content">
         <p class="restaurant-item__city">${restaurant.city} | <span class="restaurant-item__rating" aria-label="rating restaurant ${restaurant.rating || 'NaN'}"><i class="fa fa-star font-yellow"></i>${restaurant.rating}</span>
         </p>
