@@ -25,7 +25,11 @@ const RestaurantList = {
 
         <section class="other">
           <article class="jobs-item">
-            <img class="jobs-item__thumbnail" src="/images/heros/hero-image_4.jpg" alt="">
+            <picture>
+              <source class="jobs-item__thumbnail" media="(max-width: 600px)" srcset="/images/hero-image_4.webp" type="image/webp">
+              <source class="jobs-item__thumbnail" media="(max-width: 600px)" srcset="/images/hero-image_4-small.jpg" type="image/jpeg">
+              <img class="jobs-item__thumbnail lazyload" src="/images/hero-image_4-large.jpg" alt="">
+            </picture>
             <div class="jobs-item__content">
               <h3 class="jobs-item__name">Join our team</h3>
               <p class="jobs-item__city">We're always hiring and excited to add new talent to our team.</p>
